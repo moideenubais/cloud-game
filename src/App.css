@@ -1,38 +1,79 @@
-.App {
-  text-align: center;
+/* Set the background color to sky blue */
+body {
+  margin: 0;
+  background-color: skyblue;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Set the sky element to take the whole screen */
+.sky {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* Style the cloud element */
+.cloud {
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  visibility: hidden; /* Add this line */
+  animation-direction: reverse;
+  width: 100px;
+  height: 50px;
+  top: 20px;
+}
+
+.border-green {
+  border: 1px solid green;
+}
+.border-red {
+  border: 1px solid red;
+}
+
+/* Animation keyframes for moving the clouds from left to right */
+@keyframes cloud1 {
+  0% {
+    left: 0px;
+    visibility: hidden; /* Add this line */
+  }
+  1% {
+    visibility: visible; /* Add this line */
+  }
+  100% {
+    left: 100%;
+    visibility: visible; /* Add this line */
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@keyframes cloud2 {
+  0% {
+    left: -100px;
+    visibility: hidden; /* Add this line */
   }
-  to {
-    transform: rotate(360deg);
+  1% {
+    visibility: visible; /* Add this line */
+  }
+  100% {
+    left: 100%;
+    visibility: hidden; /* Add this line */
+  }
+}
+
+@keyframes cloud3 {
+  0% {
+    left: -200px;
+    visibility: hidden; /* Add this line */
+  }
+  1% {
+    visibility: visible; /* Add this line */
+  }
+  100% {
+    left: 100%;
+    visibility: hidden; /* Add this line */
   }
 }
